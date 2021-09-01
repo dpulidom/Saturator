@@ -90,13 +90,12 @@ def tick():
   }
 }
 
-uint64_t Acker::wait_time( void ) const
+def wait_time( ):
 {
-  if ( _server ) {
-    return 1000000000;
-  }
+  if _server :
+    return 1000000000
 
-  int diff = _next_ping_time - Socket::timestamp();
+  int diff = _next_ping_time - Socket.timestamp()
   if ( diff < 0 ) {
     diff = 0;
   }
